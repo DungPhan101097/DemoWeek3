@@ -35,8 +35,6 @@ public class DownloadFilesActivity extends AppCompatActivity {
             tvDisplayUrl1, tvDisplayUrl2, tvDisplayUrl3;
     private ProgressBar pbFile1, pbFile2, pbFile3;
     private ImageButton iBtnStopFile1, iBtnStopFile2, iBtnStopFile3;
-    private boolean isChecked = false;
-
 
     private FileDownload[] fileDownloads = {
             new FileDownload("https://drive.google.com/uc?export=download&id=0B1rVEnAlVmVvWGxQNmxGRFBXSEU", "icon_android_java.jpg"),
@@ -62,6 +60,7 @@ public class DownloadFilesActivity extends AppCompatActivity {
 
             disposable1[0] =
                     downloadFile(btnDownFile1, pbFile1, tvDisplayUrl1, downloadInfos.get(0));
+
         });
 
 
@@ -70,6 +69,7 @@ public class DownloadFilesActivity extends AppCompatActivity {
 
             disposable2[0] =
                     downloadFile(btnDownFile2, pbFile2, tvDisplayUrl2, downloadInfos.get(1));
+
         });
 
         btnDownFile3.setOnClickListener(v -> {
@@ -77,29 +77,41 @@ public class DownloadFilesActivity extends AppCompatActivity {
 
             disposable3[0] =
                     downloadFile(btnDownFile3, pbFile3, tvDisplayUrl3, downloadInfos.get(2));
+
         });
 
         iBtnStopFile1.setOnClickListener(v -> {
+            iBtnStopFile1.setEnabled(false);
             if (disposable1[0] != null) {
                 iBtnStopFile1.setImageResource(R.drawable.icon_delete_pressed);
                 disposable1[0].dispose();
             }
+            iBtnStopFile1.setEnabled(true);
+            btnDownFile1.setEnabled(true);
         });
 
         iBtnStopFile2.setOnClickListener(v -> {
+            iBtnStopFile2.setEnabled(false);
+
             if (disposable2[0] != null) {
                 iBtnStopFile2.setImageResource(R.drawable.icon_delete_pressed);
                 disposable2[0].dispose();
             }
+            iBtnStopFile2.setEnabled(true);
+            btnDownFile2.setEnabled(true);
 
         });
 
         iBtnStopFile3.setOnClickListener(v -> {
+            iBtnStopFile3.setEnabled(false);
 
             if (disposable3[0] != null) {
                 iBtnStopFile3.setImageResource(R.drawable.icon_delete_pressed);
                 disposable3[0].dispose();
             }
+
+            iBtnStopFile3.setEnabled(true);
+            btnDownFile3.setEnabled(true);
         });
     }
 
@@ -114,12 +126,14 @@ public class DownloadFilesActivity extends AppCompatActivity {
                             tvDisplayUrl.setText("Your file in: " + curDownloadInfo
                                     .getDownloadedFile().getAbsolutePath());
                             btnDownFile.setBackgroundResource(R.drawable.download_btn_finish);
+                            btnDownFile.setEnabled(true);
                         });
     }
 
     private void initStartDoing(Button btnDownFile, ProgressBar pbFile,TextView tvDisplayUrl,
                                 ImageButton btnStop) {
         btnDownFile.setBackgroundResource(R.drawable.download_btn_idle);
+        btnDownFile.setEnabled(false);
         pbFile.setProgress(0);
         btnStop.setImageResource(R.drawable.icon_delete_normal);
         tvDisplayUrl.setText("");

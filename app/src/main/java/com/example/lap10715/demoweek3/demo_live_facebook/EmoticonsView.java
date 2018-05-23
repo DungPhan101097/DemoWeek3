@@ -61,10 +61,13 @@ public class EmoticonsView extends View {
         bmAngry = BitmapFactory.decodeResource(res, R.drawable.angry_48);
     }
 
+
+    @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawPath(animPath, paint);
         drawAllLiveEmoticons(canvas);
     }
+
 
     private void drawAllLiveEmoticons(Canvas canvas) {
         ListIterator<LiveEmoticon> iterator = liveEmoticons.listIterator();
