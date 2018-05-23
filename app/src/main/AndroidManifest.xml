@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lap10715.demoweek3">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +20,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".demo_live_fb.FBLiveReactionActivity"/>
+        <activity android:name=".demo_download_files.DownloadFilesActivity"/>
+
+        <activity android:name=".demo_live_facebook.FbLiveReactionActivity"/>
+
     </application>
 
 </manifest>

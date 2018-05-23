@@ -16,7 +16,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/emoticon_background" />
 
-        <com.example.lap10715.demoweek3.demo_live_fb.EmoticonsView
+        <com.example.lap10715.demoweek3.demo_live_facebook.EmoticonsView
             android:id="@+id/custom_view"
             android:layout_gravity="bottom"
             android:layout_width="match_parent"
