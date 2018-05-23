@@ -24,6 +24,10 @@
 
         <activity android:name=".demo_live_facebook.FbLiveReactionActivity"/>
 
+        <activity android:name=".demo_green_dao.DemoGreenDAOActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

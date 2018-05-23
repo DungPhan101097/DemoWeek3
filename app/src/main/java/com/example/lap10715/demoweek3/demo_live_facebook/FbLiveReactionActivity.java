@@ -92,16 +92,7 @@ public class FbLiveReactionActivity extends AppCompatActivity {
             public void onNext(Timed<Emoticons> emoticonsTimed) {
                 emoticonsView.addView(emoticonsTimed.value());
 
-                long currentTimeStamp = System.currentTimeMillis();
-                long diffInMillis = currentTimeStamp - (emoticonsTimed).time();
-                if (diffInMillis > MINIMUM_DURATION_BETWEEN_EMOTICONS) {
-                    emoticonSubscription.request(1);
-                } else {
-                    Handler handler = new Handler();
-                    handler.postDelayed(() ->
-                            emoticonSubscription.request(1),
-                            MINIMUM_DURATION_BETWEEN_EMOTICONS - diffInMillis);
-                }
+                emoticonSubscription.request(1);
             }
 
             @Override
