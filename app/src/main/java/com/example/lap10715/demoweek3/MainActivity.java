@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.lap10715.demoweek3.demo_download_files.DownloadFilesActivity;
+import com.example.lap10715.demoweek3.demo_green_dao.DemoGreenDAOActivity;
 import com.example.lap10715.demoweek3.demo_live_facebook.FbLiveReactionActivity;
 
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnStartFbLive;
     private Button btnStartDownloadFile;
+    private Button btnKeepYourNote;
 
     private static final int MY_PERMISSIONS_REQUEST_WRITE_STORAGE = 1;
 
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         btnStartFbLive = findViewById(R.id.btn_live_fb);
         btnStartDownloadFile = findViewById(R.id.btn_download_file);
+        btnKeepYourNote = findViewById(R.id.btn_keep_note);
 
         btnStartFbLive.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this,
@@ -60,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
         btnStartDownloadFile.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this,
                 DownloadFilesActivity.class)));
+
+        btnKeepYourNote.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this,
+                        DemoGreenDAOActivity.class)));
     }
 
     @Override

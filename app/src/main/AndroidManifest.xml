@@ -21,12 +21,9 @@
         </activity>
 
         <activity android:name=".demo_download_files.DownloadFilesActivity"/>
-
         <activity android:name=".demo_live_facebook.FbLiveReactionActivity"/>
-
-        <activity android:name=".demo_green_dao.DemoGreenDAOActivity">
-
-        </activity>
+        <activity android:name=".demo_green_dao.DemoGreenDAOActivity"/>
+        <activity android:name=".demo_green_dao.NewNoteActivity"/>
 
     </application>
 

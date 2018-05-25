@@ -18,5 +18,11 @@
         android:text="Demo Download Files"
         android:layout_gravity="center_horizontal"/>
 
+    <Button
+        android:id="@+id/btn_keep_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keep your note"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
